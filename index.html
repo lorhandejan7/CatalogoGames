@@ -1,23 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Mídia Física - PlayStation & Xbox</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-compact-disc disc-icon"></i>
+            <span>RETRO<span class="highlight">&</span>NEXUS</span>
+        </div>
+        
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Buscar por título ou franquia...">
+        </div>
+
+        <div class="cart-btn-wrapper" id="cartToggle">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" id="cartCount">0</span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        
+        <!-- Controls & Filters Section -->
+        <section class="controls-section">
+            <div class="filter-group">
+                <span class="filter-label"><i class="fa-solid fa-gamepad"></i> Plataforma:</span>
+                <div class="btn-group" id="platformFilters">
+                    <button class="filter-btn active" data-platform="all">Todas</button>
+                    <button class="filter-btn ps-btn" data-platform="ps">PlayStation</button>
+                    <button class="filter-btn xbox-btn" data-platform="xbox">Xbox</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-label"><i class="fa-solid fa-gem"></i> Condição:</span>
+                <select id="conditionFilter" class="custom-select">
+                    <option value="all">Todas as Condições</option>
+                    <option value="Lacre de Fábrica">Lacre de Fábrica</option>
+                    <option value="Excelente Estado">Excelente Estado</option>
+                    <option value="Bom Estado">Bom Estado</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-label"><i class="fa-solid fa-arrow-down-short-wide"></i> Ordenar:</span>
+                <select id="sortFilter" class="custom-select">
+                    <option value="default">Relevância</option>
+                    <option value="price-asc">Menor Preço</option>
+                    <option value="price-desc">Maior Preço</option>
+                    <option value="title-asc">Nome (A-Z)</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Catalog Grid -->
+        <section class="games-grid" id="gamesGrid">
+            <!-- Os cards dos jogos serão injetados dinamicamente via JS -->
+        </section>
+
+        <!-- Empty State -->
+        <div id="noResults" class="no-results hidden">
+            <i class="fa-solid fa-ghost"></i>
+            <h3>Nenhum jogo encontrado</h3>
+            <p>Tente ajustar os filtros ou o termo de busca.</p>
+        </div>
     </main>
-  </body>
+
+    <!-- Modal de Detalhes da Mídia Física -->
+    <div class="modal-overlay" id="gameModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body" id="modalBody">
+                <!-- Conteúdo do Modal Gerado via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar do Carrinho -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Seu Carrinho</h3>
+            <button class="close-cart" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Itens do carrinho via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalValue">R$ 0,00</span>
+            </div>
+            <button class="checkout-btn" onclick="alert('Pedido simulado com sucesso! Obrigado por comprar mídias físicas.')">
+                Finalizar Pedido
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
