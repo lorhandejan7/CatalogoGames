@@ -1,4 +1,4 @@
-// Base de Dados Mock de Mídias Físicas
+
 const gamesData = [
     {
         id: 1,
@@ -212,7 +212,7 @@ function renderCatalog() {
     }
 }
 
-// Modal de Detalhes
+
 function openModal(id) {
     const game = gamesData.find(g => g.id === id);
     if (!game) return;
@@ -253,7 +253,7 @@ function closeModal() {
     gameModal.classList.remove('active');
 }
 
-// Gerenciamento do Carrinho
+
 function addToCart(id) {
     const game = gamesData.find(g => g.id === id);
     if (!game) return;
