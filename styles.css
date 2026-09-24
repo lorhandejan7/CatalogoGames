@@ -358,9 +358,9 @@ body {
 }
 
 .btn-add {
-  background: var(--accent);
+  background: #00ff88; /* Verde Neon */
+  color: #0a0c10;      /* Texto escuro para dar contraste */
   border: none;
-  color: white;
   padding: 0.5rem 0.8rem;
   border-radius: 8px;
   font-family: var(--font-body);
