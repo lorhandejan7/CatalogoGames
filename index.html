@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo Mídia Física - PlayStation & Xbox</title>
-    <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Header / Navbar -->
+
     <header class="navbar">
         <div class="logo">
             <i class="fa-solid fa-compact-disc disc-icon"></i>
-            <span>RETRO<span class="highlight">&</span>NEXUS</span>
+            <span>NERDOLA<span class="highlight">&</span>GAMER</span>
         </div>
         
         <div class="search-box">
@@ -29,10 +28,10 @@
         </div>
     </header>
 
-    <!-- Main Container -->
+ 
     <main class="container">
         
-        <!-- Controls & Filters Section -->
+     
         <section class="controls-section">
             <div class="filter-group">
                 <span class="filter-label"><i class="fa-solid fa-gamepad"></i> Plataforma:</span>
@@ -64,12 +63,11 @@
             </div>
         </section>
 
-        <!-- Catalog Grid -->
+    
         <section class="games-grid" id="gamesGrid">
-            <!-- Os cards dos jogos serão injetados dinamicamente via JS -->
+       
         </section>
 
-        <!-- Empty State -->
         <div id="noResults" class="no-results hidden">
             <i class="fa-solid fa-ghost"></i>
             <h3>Nenhum jogo encontrado</h3>
@@ -77,24 +75,23 @@
         </div>
     </main>
 
-    <!-- Modal de Detalhes da Mídia Física -->
+
     <div class="modal-overlay" id="gameModal">
         <div class="modal-content">
             <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body" id="modalBody">
-                <!-- Conteúdo do Modal Gerado via JS -->
+               
             </div>
         </div>
     </div>
 
-    <!-- Sidebar do Carrinho -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
             <h3><i class="fa-solid fa-cart-shopping"></i> Seu Carrinho</h3>
             <button class="close-cart" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="cart-items" id="cartItems">
-            <!-- Itens do carrinho via JS -->
+           
         </div>
         <div class="cart-footer">
             <div class="cart-total">
